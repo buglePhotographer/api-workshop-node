@@ -13,14 +13,12 @@ mongoose.connect('mongodb://localhost/Tododb');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-//app.use(function(req, res) {
-//    res.status(404).send({url: req.originalUrl + ' no se pudo encontrar :3'})
-//});
-
-
 const routes = require('./routes/tareaRoutes');
 routes(app);
 
+app.use(function(req, res) {
+    res.status(404).send({url: req.originalUrl + ' no se pudo encontrar :3'})
+});
 
 app.listen(port, function(){ 
     console.log('API corriendo en puerto: ' + port);
