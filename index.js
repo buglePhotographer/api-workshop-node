@@ -7,7 +7,7 @@ const Tarea = require('./models/tareaModel');
 const port = process.env.PORT || 3000;
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/Tododb'); 
+mongoose.connect('mongodb://localhost/TareasDb'); 
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
